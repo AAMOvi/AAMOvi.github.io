@@ -1,0 +1,16 @@
+---
+import type { ResearchProject } from '../data/research';
+interface Props { project: ResearchProject; index: number; compact?: boolean; }
+const { project, index, compact = false } = Astro.props;
+---
+<article class:list={['research-item', { compact }]}>
+  <p class="item-index">{String(index + 1).padStart(2, '0')}</p>
+  <div>
+    <p class="status">{project.status}</p>
+    <h3>{project.shortTitle}</h3>
+    {!compact && <p class="full-title">{project.title}</p>}
+    <p>{project.summary}</p>
+    {project.supervisor && <p class="supervisor"><span>Supervised by</span> {project.supervisor[0]}<br />{project.supervisor[1]}</p>}
+    {!compact && <ul class="tag-list" aria-label="Research themes">{project.themes.map((theme) => <li>{theme}</li>)}</ul>}
+  </div>
+</article>

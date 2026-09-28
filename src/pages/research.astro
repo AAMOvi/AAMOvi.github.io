@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResearchItem from '../components/ResearchItem.astro';
+import { research } from '../data/research';
+---
+<BaseLayout title="Research — Abdullah Al Maruf" description="Research by Abdullah Al Maruf in multilingual vision-language models, visual reasoning, robust evaluation, and evidence-grounded computer vision.">
+  <header class="page-header shell">
+    <p class="eyebrow">Research</p>
+    <div>
+      <h1>Reliable multimodal systems, evaluated beyond shortcuts.</h1>
+      <p>My work asks whether visual-language systems ground their answers in evidence, transfer across languages and contexts, and remain useful under real-world constraints.</p>
+    </div>
+  </header>
+  <section class="shell page-section" aria-label="Research projects">
+    <div class="item-list detailed">{research.map((project, index) => <ResearchItem project={project} index={index} />)}</div>
+  </section>
+</BaseLayout>

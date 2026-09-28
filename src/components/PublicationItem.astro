@@ -1,0 +1,15 @@
+---
+import type { Publication } from '../data/publications';
+interface Props { publication: Publication; index: number; }
+const { publication, index } = Astro.props;
+const authorText = publication.authors.join(', ');
+---
+<article class="publication-item">
+  <p class="item-index">{String(index + 1).padStart(2, '0')}</p>
+  <div>
+    <div class="publication-meta"><span>{publication.year}</span><span>{publication.status}</span></div>
+    <h3>{publication.title}</h3>
+    <p class="authors">{authorText}</p>
+    <p class="venue">{publication.venue}</p>
+  </div>
+</article>

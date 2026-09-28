@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import { publications } from '../data/publications';
+---
+<BaseLayout title="Publications — Abdullah Al Maruf" description="Scholarly publications and manuscripts by Abdullah Al Maruf in multimodal AI, computer vision, and medical imaging.">
+  <header class="page-header shell">
+    <p class="eyebrow">Publications</p>
+    <div>
+      <h1>Scholarly work</h1>
+      <p>Accepted and under-review research. Paper, code, and project links will appear only when verified public URLs are available.</p>
+    </div>
+  </header>
+  <section class="shell page-section" aria-label="Publication list">
+    <div class="publication-list detailed">{publications.map((publication, index) => <PublicationItem publication={publication} index={index} />)}</div>
+  </section>
+</BaseLayout>
