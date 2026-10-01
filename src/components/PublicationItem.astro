@@ -11,7 +11,7 @@ const { publication, index } = Astro.props;
     <p class="authors">{publication.authors.map((author, authorIndex) => <>{author === 'Abdullah Al Maruf' ? <strong>{author}</strong> : author}{authorIndex < publication.authors.length - 1 ? ', ' : ''}</>)}</p>
     <p class="venue">
       <span class="venue-name">{publication.venueName}</span>
-      {publication.venueContext && <span class="venue-context">at {publication.venueContext}</span>}
+      {publication.venueContext && <><span class="venue-join">at</span><span class="venue-context">{publication.venueContext}</span></>}
     </p>
     <p class="contribution-type">{publication.contributionType}</p>
     {publication.links && <div class="item-actions">{publication.links.map((link) => <a href={link.url} target="_blank" rel="noreferrer" aria-label={`${link.label} for ${publication.title} (opens in a new tab)`}>{link.label}</a>)}</div>}

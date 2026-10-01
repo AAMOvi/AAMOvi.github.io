@@ -18,7 +18,7 @@ export const publications: readonly Publication[] = [
     venueName: 'Safe and Defensive Autonomous Driving (SDAD) Workshop',
     venueContext: 'ECCV 2026',
     status: 'Accepted workshop paper and poster',
-    contributionType: 'Non-archival workshop track',
+    contributionType: 'Peer-reviewed · Non-archival workshop contribution',
     year: 2026,
     links: [
       { label: 'Paper', url: 'https://sdad.cc/papers/pdf/16_BD_HazardVLM_Probing_Vision.pdf' },
