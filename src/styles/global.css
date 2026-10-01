@@ -33,8 +33,11 @@ h1, h2, h3 { text-wrap: balance; }
 .mobile-nav { display: none; }
 .hero { padding-block: 54px 66px; }
 .hero-kicker { border-top: 2px solid var(--ink); padding-top: 12px; display: flex; justify-content: space-between; font: .78rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(360px, 1.15fr); gap: 7vw; padding-top: 46px; align-items: start; }
-.hero h1 { max-width: 700px; margin-bottom: 24px; font: 500 clamp(3.75rem, 7vw, 6.2rem)/.9 var(--serif); letter-spacing: -.065em; }
+.hero-grid { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(360px, 1.2fr); gap: 7vw; padding-top: 46px; align-items: start; }
+.hero-portrait { width: 100%; max-width: 340px; margin: 0; }
+.hero-portrait img { display: block; width: 100%; height: 425px; object-fit: cover; object-position: center 35%; border: 1px solid var(--rule); }
+.hero-portrait figcaption { padding-top: 17px; }
+.hero-portrait h1 { margin-bottom: 7px; font: 500 clamp(1.8rem, 3vw, 2.35rem)/1.05 var(--serif); letter-spacing: -.035em; }
 .affiliation { max-width: 570px; color: var(--muted); font-size: 1rem; }
 .hero-statement { padding-top: 8px; }
 .hero-statement .identity { color: var(--ink); font: 500 clamp(1.55rem, 2.7vw, 2.35rem)/1.16 var(--serif); letter-spacing: -.025em; }
@@ -148,7 +151,7 @@ tbody tr:last-child td { border-bottom: 0; }
   .mobile-nav nav a[aria-current='page'] { background: #e6efec; }
   .hero { padding-block: 46px 58px; }
   .hero-grid { grid-template-columns: 1fr; gap: 44px; padding-top: 48px; }
-  .hero h1 { font-size: clamp(3.6rem, 15vw, 6rem); }
+  .hero-portrait { max-width: 340px; }
   .section-heading, .research-item, .publication-item, .page-header { grid-template-columns: 72px minmax(0, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-grid h2 { max-width: 560px; }
@@ -166,7 +169,9 @@ tbody tr:last-child td { border-bottom: 0; }
   .wordmark > span:last-child { display: none; }
   .hero-kicker { gap: 20px; }
   .hero-kicker span:last-child { text-align: right; }
-  .hero h1 { font-size: clamp(3.25rem, 18vw, 4.6rem); }
+  .hero-portrait { max-width: none; }
+  .hero-portrait img { height: 300px; object-position: center 31%; }
+  .hero-portrait h1 { font-size: 1.9rem; }
   .hero-actions .button { flex: 1 1 42%; }
   .section { padding-block: 54px; }
   .section-heading, .research-item, .publication-item, .page-header { grid-template-columns: 1fr; }

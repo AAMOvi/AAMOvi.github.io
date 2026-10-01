@@ -16,10 +16,13 @@ const description = 'Abdullah Al Maruf is a CSE undergraduate at RUET studying v
       <span>RUET · Bangladesh</span>
     </div>
     <div class="hero-grid">
-      <div>
-        <h1>{profile.name}</h1>
-        <p class="affiliation">{profile.department}<br />{profile.institution}</p>
-      </div>
+      <figure class="hero-portrait">
+        <img src="/abdullah-al-maruf.webp" alt="Portrait of Abdullah Al Maruf" width="800" height="1000" fetchpriority="high" decoding="async" />
+        <figcaption>
+          <h1>{profile.name}</h1>
+          <p class="affiliation">{profile.department}<br />{profile.institution}</p>
+        </figcaption>
+      </figure>
       <div class="hero-statement">
         <p class="identity">{profile.researchIdentity}</p>
         <p>{profile.summary}</p>
