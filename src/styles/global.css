@@ -35,7 +35,7 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-kicker { border-top: 2px solid var(--ink); padding-top: 12px; display: flex; justify-content: space-between; font: .78rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
 .hero-grid { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(360px, 1.2fr); gap: 7vw; padding-top: 46px; align-items: start; }
 .hero-portrait { width: 100%; max-width: 340px; margin: 0; }
-.hero-portrait img { display: block; width: 100%; height: 425px; object-fit: cover; object-position: center 35%; border: 1px solid var(--rule); }
+.hero-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: center; border: 1px solid var(--rule); }
 .hero-portrait figcaption { padding-top: 17px; }
 .hero-portrait h1 { margin-bottom: 7px; font: 500 clamp(1.8rem, 3vw, 2.35rem)/1.05 var(--serif); letter-spacing: -.035em; }
 .affiliation { max-width: 570px; color: var(--muted); font-size: 1rem; }
@@ -170,7 +170,7 @@ tbody tr:last-child td { border-bottom: 0; }
   .hero-kicker { gap: 20px; }
   .hero-kicker span:last-child { text-align: right; }
   .hero-portrait { max-width: none; }
-  .hero-portrait img { height: 300px; object-position: center 31%; }
+  .hero-portrait img { height: auto; object-position: center; }
   .hero-portrait h1 { font-size: 1.9rem; }
   .hero-actions .button { flex: 1 1 42%; }
   .section { padding-block: 54px; }
