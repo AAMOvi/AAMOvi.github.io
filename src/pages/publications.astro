@@ -1,17 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 import PublicationItem from '../components/PublicationItem.astro';
-import { publications } from '../data/publications';
+import { acceptedPublications, underReviewPublications } from '../data/publications';
 ---
-<BaseLayout title="Publications — Abdullah Al Maruf" description="Scholarly publications and manuscripts by Abdullah Al Maruf in multimodal AI, computer vision, and medical imaging.">
+<BaseLayout title="Publications — Abdullah Al Maruf" description="Accepted workshop contributions and manuscripts under review by Abdullah Al Maruf in computer vision and multimodal learning.">
   <header class="page-header shell">
     <p class="eyebrow">Publications</p>
     <div>
-      <h1>Scholarly work</h1>
-      <p>Accepted and under-review research. Paper, code, and project links will appear only when verified public URLs are available.</p>
+      <h1>Publications and manuscripts</h1>
+      <p>Accepted workshop contributions are identified as non-archival. Submitted work is listed separately, and links appear only for public artifacts.</p>
     </div>
   </header>
-  <section class="shell page-section" aria-label="Publication list">
-    <div class="publication-list detailed">{publications.map((publication, index) => <PublicationItem publication={publication} index={index} />)}</div>
+  <section class="shell page-section">
+    <SectionHeading index="01" title="Accepted workshop contributions" />
+    <div class="publication-list detailed">{acceptedPublications.map((publication, index) => <PublicationItem publication={publication} index={index} />)}</div>
+  </section>
+
+  <section class="shell page-section">
+    <SectionHeading index="02" title="Manuscript under review" />
+    <div class="publication-list detailed">{underReviewPublications.map((publication, index) => <PublicationItem publication={publication} index={index} />)}</div>
+    <p class="availability-note">No public manuscript link is currently available for this submission.</p>
+  </section>
+
+  <section class="shell page-section compact-note">
+    <p><strong>Not listed as a publication:</strong> <em>Visual Reference Tables Recover Signal That Tissue Captions Alone Miss</em> is collaborative research in manuscript revision after an earlier workshop rejection. It is not currently under review.</p>
   </section>
 </BaseLayout>

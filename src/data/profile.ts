@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Abdullah Al Maruf',
-  title: 'Undergraduate Researcher',
+  title: 'CSE Undergraduate',
   institution: 'Rajshahi University of Engineering & Technology',
   institutionShort: 'RUET',
   department: 'Department of Computer Science & Engineering',
@@ -10,10 +10,10 @@ export const profile = {
   location: 'Bogura, Bangladesh',
   email: 'abdullahovi.official@gmail.com',
   github: 'https://github.com/AAMOvi',
-  linkedin: 'https://linkedin.com/in/aamozz',
-  researchIdentity: 'Reliable and generalizable multimodal visual intelligence',
+  linkedin: 'https://www.linkedin.com/in/aamozz',
+  researchIdentity: 'Visual evidence, multimodal evaluation, and efficient learning',
   summary:
-    'I study how vision-language systems reason across languages, settings, and scales—with an emphasis on visual grounding, robustness, efficient learning, and evidence-grounded evaluation.',
+    'I am a CSE undergraduate at RUET studying when vision-language models use visual evidence and when their answers follow language priors. My work examines hazard reasoning in Bangladesh road scenes, feature distillation for compact image classifiers, and specification-based inspection. My ongoing thesis studies how caption supervision affects Bengali image-text grounding.',
   interests: [
     'Vision-Language Models',
     'Multimodal Reasoning and Visual Grounding',
@@ -30,10 +30,14 @@ export const profile = {
   },
   honors: [
     'Champion, University Innovation Hub Program, IC-6 cohort',
-    'Founder and CTO, GreenLoop',
     'Champion, Hult Prize at RUET, 2025',
     'Represented RUET at Hult Prize National, 2025',
     '6th place, Inter-University Capture the Flag Competition, BUET CSE FEST 2024',
     'Top 25 finalist, BDApps Innovation Challenge, among more than 1,500 teams nationwide',
   ],
+  leadership: ['Founder and CTO, GreenLoop'],
+  engineering: {
+    title: 'Khoj (Lightning Search)',
+    summary: 'Fuzzy retrieval over 10,000+ entries using n-gram indexing, candidate filtering, RapidFuzz ranking, Python, and FastAPI.',
+  },
 } as const;

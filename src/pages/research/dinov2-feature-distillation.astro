@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { research } from '../../data/research';
+
+const project = research.find(({ slug }) => slug === 'dinov2-feature-distillation')!;
+---
+<BaseLayout title="DINOv2 Feature Distillation — Abdullah Al Maruf" description={project.summary}>
+  <header class="project-header shell">
+    <a class="back-link" href="/research/">Research overview</a>
+    <p class="eyebrow">Completed study</p>
+    <h1>{project.shortTitle}</h1>
+    <p class="project-title">{project.title}</p>
+    <div class="project-status">
+      <p><span>Status</span>{project.status}<br />{project.context}</p>
+      <p><span>Contribution</span>{project.contribution}</p>
+    </div>
+  </header>
+
+  <article class="project-body shell">
+    <section>
+      <h2>Research question</h2>
+      <p class="lead-copy">{project.question}</p>
+      <p>The study asks whether a compact recurrent classifier can absorb useful representation geometry from a frozen DINOv2 teacher, and whether any gain is specific to the recurrent architecture.</p>
+    </section>
+
+    <section>
+      <h2>Controlled comparison</h2>
+      <p>Both NCA-Lite and a closely parameter-count-matched feed-forward CNN were trained on CIFAR-100 with and without feature distillation. A linear projector aligned student features with frozen DINOv2 ViT-S/14 representations using cross-entropy and cosine losses.</p>
+      <ul class="method-list">
+        <li>45,000 training, 5,000 validation, and 10,000 test images</li>
+        <li>Three paired random seeds for every condition</li>
+        <li>Parameter, MAC, CPU-latency, and T4-latency comparisons for the students</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Selected results</h2>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Feature distillation selected results table">
+        <table>
+          <thead><tr><th>Student</th><th>Without distillation</th><th>With distillation</th><th>Student parameters</th></tr></thead>
+          <tbody>
+            <tr><td>NCA-Lite</td><td>51.71 ± 0.19%</td><td>54.77 ± 0.62%</td><td>206,980</td></tr>
+            <tr><td>Feed-forward CNN</td><td>53.99 ± 1.06%</td><td>56.13 ± 0.75%</td><td>201,100</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Efficiency comparison table">
+        <table>
+          <thead><tr><th>Student</th><th>MACs</th><th>CPU latency</th><th>T4 latency</th></tr></thead>
+          <tbody>
+            <tr><td>NCA-Lite</td><td>757.65M</td><td>16.611 ms</td><td>1.310 ms</td></tr>
+            <tr><td>Feed-forward CNN</td><td>43.51M</td><td>2.413 ms</td><td>0.705 ms</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="result-callout">Distillation improved both students. The recurrent model gained accuracy, but the feed-forward baseline remained more accurate and substantially cheaper in this comparison.</p>
+    </section>
+
+    <section>
+      <h2>Limits and interpretation</h2>
+      <p>The study covers one dataset, one frozen teacher, and compact student models. The efficiency figures use batch size one and exclude feature projectors. They support a controlled comparison, not a general claim that recurrent local updates are preferable to feed-forward inference. The accepted LIGHT workshop contribution is non-archival.</p>
+      <div class="item-actions">
+        {project.links?.map((link) => <a href={link.url} target="_blank" rel="noreferrer">{link.label}</a>)}
+      </div>
+    </section>
+  </article>
+</BaseLayout>

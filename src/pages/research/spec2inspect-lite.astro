@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { research } from '../../data/research';
+
+const project = research.find(({ slug }) => slug === 'spec2inspect-lite')!;
+---
+<BaseLayout title="Spec2Inspect-Lite — Abdullah Al Maruf" description={project.summary}>
+  <header class="project-header shell">
+    <a class="back-link" href="/research/">Research overview</a>
+    <p class="eyebrow">Ongoing independent research</p>
+    <h1>{project.shortTitle}</h1>
+    <p class="project-title">{project.title}</p>
+    <div class="project-status">
+      <p><span>Status</span>{project.status}<br />{project.context}</p>
+    </div>
+  </header>
+
+  <article class="project-body shell">
+    <section>
+      <h2>Research question</h2>
+      <p class="lead-copy">{project.question}</p>
+      <p>The pipeline is designed to make inspection decisions traceable: localize suspected defects, derive normalized evidence and measurements, execute a written specification deterministically, and abstain when the available evidence is insufficient.</p>
+    </section>
+
+    <section>
+      <h2>Current evaluation</h2>
+      <p>Core experiments cover three MVTec AD categories and 60 human-authored specifications. The format-controlled analysis compares a direct Qwen decision with the structured pipeline across 588 matched image–specification pairs.</p>
+      <ul class="method-list">
+        <li>Decision space: PASS, FAIL, or ABSTAIN</li>
+        <li>Primary safety-oriented measure: false-PASS rate</li>
+        <li>Coverage reported alongside decision quality to expose the cost of abstention</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Format-controlled results</h2>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Spec2Inspect format-controlled results table">
+        <table>
+          <thead><tr><th>Measure</th><th>Direct VLM</th><th>Structured pipeline</th></tr></thead>
+          <tbody>
+            <tr><td>Accuracy</td><td>51.87%</td><td>55.95%</td></tr>
+            <tr><td>Balanced accuracy</td><td>50.93%</td><td>56.17%</td></tr>
+            <tr><td>False-PASS rate</td><td>94.44%</td><td>7.64%</td></tr>
+            <tr><td>Coverage</td><td>99.32%</td><td>74.66%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="result-callout">The structured pipeline sharply reduced false approvals, but it did so while answering fewer cases. Overall accuracy superiority was not established: the accuracy difference was +4.08 percentage points with a 95% bootstrap interval from −8.88 to +17.25, and McNemar's p = 0.219.</p>
+    </section>
+
+    <section>
+      <h2>Additional analysis</h2>
+      <p>Across 7,513 image–specification pairs, reference-rule evaluation was 82.07% accurate, compared with 56.73% for raw Qwen decisions. This supports the value of explicit rule execution under the evaluated setup, but it does not remove the coverage tradeoff or establish performance beyond the studied categories and specifications.</p>
+    </section>
+
+    <section>
+      <h2>Research status</h2>
+      <p>This work has not been submitted or peer reviewed. Core experiments are complete and the manuscript is in preparation. The current evidence supports a narrower claim about false approvals and selective coverage, not a general claim of superior inspection accuracy.</p>
+    </section>
+  </article>
+</BaseLayout>

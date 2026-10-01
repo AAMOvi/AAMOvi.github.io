@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { research } from '../../data/research';
+
+const project = research.find(({ slug }) => slug === 'bd-hazardvlm')!;
+---
+<BaseLayout title="BD-HazardVLM — Abdullah Al Maruf" description={project.summary}>
+  <header class="project-header shell">
+    <a class="back-link" href="/research/">Research overview</a>
+    <p class="eyebrow">Completed study</p>
+    <h1>{project.shortTitle}</h1>
+    <p class="project-title">{project.title}</p>
+    <div class="project-status">
+      <p><span>Status</span>{project.status}<br />{project.context}</p>
+      <p><span>Contribution</span>{project.contribution}</p>
+    </div>
+  </header>
+
+  <article class="project-body shell">
+    <section>
+      <h2>Research question</h2>
+      <p class="lead-copy">{project.question}</p>
+      <p>The study evaluates whether high hazard-detection scores translate into useful defensive-driving judgments, including hazard category, urgency, severity, and recommended action.</p>
+    </section>
+
+    <section>
+      <h2>Evaluation design</h2>
+      <p>Three open vision-language models were evaluated on 500 existing Bangladesh road-scene images: 375 from RSUD20K and 125 from TFP-BD. The evaluation separates binary hazard presence from the finer judgments needed to act safely.</p>
+      <ul class="method-list">
+        <li>Models: Qwen2.5-VL-7B, InternVL3-8B, and LLaVA-NeXT-8B</li>
+        <li>Tasks: presence, category, severity, timing, and defensive action</li>
+        <li>Comparison: hazard-presence performance against the 89.0% majority baseline</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Selected results</h2>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="BD-HazardVLM selected results table">
+        <table>
+          <thead><tr><th>Measure</th><th>Observed range</th><th>Interpretation</th></tr></thead>
+          <tbody>
+            <tr><td>Hazard presence accuracy</td><td>88.0–89.2%</td><td>Approximately matched the 89.0% majority baseline.</td></tr>
+            <tr><td>Hazard category accuracy</td><td>27.6–38.2%</td><td>Fine-grained recognition remained weak.</td></tr>
+            <tr><td>Timing accuracy</td><td>1.6–12.4%</td><td>Models rarely identified when a response was needed.</td></tr>
+            <tr><td>Exact action match</td><td>0.4–1.6%</td><td>Recommended actions seldom matched the reference exactly.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="result-callout">The main result is a gap between coarse detection and decision-relevant reasoning: a model can identify that a scene is hazardous without reliably explaining what the hazard is or what a driver should do.</p>
+    </section>
+
+    <section>
+      <h2>Limits and interpretation</h2>
+      <p>This is a diagnostic benchmark study, not evidence that any evaluated model is ready for safety-critical deployment. The dataset is modest, relies on existing road-scene sources, and exact-match scoring can penalize reasonable wording variation. The accepted SDAD workshop contribution is non-archival.</p>
+      <div class="item-actions">
+        {project.links?.map((link) => <a href={link.url} target="_blank" rel="noreferrer">{link.label}</a>)}
+      </div>
+    </section>
+  </article>
+</BaseLayout>

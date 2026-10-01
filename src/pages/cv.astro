@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import PublicationItem from '../components/PublicationItem.astro';
 import { profile } from '../data/profile';
 import { research } from '../data/research';
+import { acceptedPublications } from '../data/publications';
 ---
 <BaseLayout title="CV — Abdullah Al Maruf" description="Academic background, research experience, technical skills, and selected honors of Abdullah Al Maruf.">
   <header class="page-header shell cv-header">
@@ -11,7 +13,7 @@ import { research } from '../data/research';
       <h1>Academic profile</h1>
       <p>{profile.summary}</p>
     </div>
-    <a class="button primary download-button" href="/Abdullah_Al_Maruf_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
+    <a class="button primary download-button" href="/Abdullah_Al_Maruf_CV.pdf">Download CV</a>
   </header>
 
   <div class="shell cv-sections">
@@ -24,14 +26,19 @@ import { research } from '../data/research';
     </section>
 
     <section class="cv-section">
-      <SectionHeading index="02" title="Research experience" />
+      <SectionHeading index="02" title="Accepted publications" />
+      <div class="publication-list">{acceptedPublications.map((publication, index) => <PublicationItem publication={publication} index={index} />)}</div>
+    </section>
+
+    <section class="cv-section">
+      <SectionHeading index="03" title="Research experience" />
       <div class="cv-entry-list">
-        {research.map((project) => <div class="cv-entry"><div><p class="status">{project.status}</p><h3>{project.shortTitle}</h3><p>{project.summary}</p></div></div>)}
+        {research.map((project) => <div class="cv-entry"><div><p class="status">{project.status} · {project.context}</p><h3>{project.shortTitle}</h3><p>{project.finding ?? project.summary}</p></div></div>)}
       </div>
     </section>
 
     <section class="cv-section">
-      <SectionHeading index="03" title="Technical skills" />
+      <SectionHeading index="04" title="Technical skills" />
       <div class="skill-columns">
         <div><h3>Research</h3><p>{profile.skills.research.join(' · ')}</p></div>
         <div><h3>Tools & methods</h3><p>{profile.skills.technical.join(' · ')}</p></div>
@@ -39,8 +46,16 @@ import { research } from '../data/research';
     </section>
 
     <section class="cv-section">
-      <SectionHeading index="04" title="Selected honors" />
+      <SectionHeading index="05" title="Selected honors" />
       <ol class="honors-list">{profile.honors.map((honor) => <li>{honor}</li>)}</ol>
+    </section>
+
+    <section class="cv-section">
+      <SectionHeading index="06" title="Leadership and engineering" />
+      <div class="skill-columns">
+        <div><h3>Leadership</h3><p>{profile.leadership.join(' · ')}</p></div>
+        <div><h3>{profile.engineering.title}</h3><p>{profile.engineering.summary}</p></div>
+      </div>
     </section>
   </div>
 </BaseLayout>
