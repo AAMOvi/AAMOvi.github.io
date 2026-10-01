@@ -3,7 +3,8 @@ import type { ResearchLink } from './research';
 export type Publication = {
   title: string;
   authors: readonly string[];
-  venue: string;
+  venueName: string;
+  venueContext?: string;
   status: string;
   contributionType: string;
   year: number;
@@ -14,7 +15,8 @@ export const publications: readonly Publication[] = [
   {
     title: 'BD-HazardVLM: Probing Vision-Language Models for Latent Defensive-Driving Hazards in Bangladesh Road Scenes',
     authors: ['Abdullah Al Maruf', 'Md. Sajedul Islam', 'Tanmoy Mridha', 'Irfan Hossain Bhuiyan'],
-    venue: 'Safe and Defensive Autonomous Driving (SDAD) Workshop at ECCV 2026',
+    venueName: 'Safe and Defensive Autonomous Driving (SDAD) Workshop',
+    venueContext: 'ECCV 2026',
     status: 'Accepted workshop paper and poster',
     contributionType: 'Non-archival workshop track',
     year: 2026,
@@ -26,7 +28,8 @@ export const publications: readonly Publication[] = [
   {
     title: 'DINOv2 Feature Distillation for Recurrent Local-Update Image Classifiers',
     authors: ['Abdullah Al Maruf'],
-    venue: 'LIGHT Workshop at NeurIPS 2026',
+    venueName: 'LIGHT Workshop',
+    venueContext: 'NeurIPS 2026',
     status: 'Accepted extended abstract and poster',
     contributionType: 'Peer-reviewed · Non-archival workshop contribution',
     year: 2026,
@@ -38,7 +41,7 @@ export const publications: readonly Publication[] = [
   {
     title: 'Single-Pass Uncertainty for Selective Polyp Segmentation under External Dataset Variation',
     authors: ['Abdullah Al Maruf', 'Tirtho Roy'],
-    venue: 'ML4H 2026 Symposium',
+    venueName: 'ML4H 2026 Symposium',
     status: 'Manuscript under review',
     contributionType: 'Submitted manuscript · No public artifact available',
     year: 2026,
