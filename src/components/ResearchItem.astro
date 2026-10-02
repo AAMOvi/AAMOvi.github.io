@@ -6,7 +6,10 @@ const { project, index, compact = false } = Astro.props;
 <article class:list={['research-item', { compact }]}>
   <p class="item-index">{String(index + 1).padStart(2, '0')}</p>
   <div>
-    <p class="status">{project.status} · {project.context}</p>
+    <div class="research-meta">
+      <span>{project.status}</span>
+      <span>{project.context}</span>
+    </div>
     <h3>{project.detailPath ? <a href={project.detailPath}>{project.shortTitle}</a> : project.shortTitle}</h3>
     {!compact && <p class="full-title">{project.title}</p>}
     <p class="research-question"><span>Question</span>{project.question}</p>

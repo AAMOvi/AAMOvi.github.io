@@ -5,21 +5,17 @@ import ResearchItem from '../components/ResearchItem.astro';
 import { completedResearch, ongoingResearch, revisionResearch } from '../data/research';
 ---
 <BaseLayout title="Research — Abdullah Al Maruf" description="Completed and ongoing research by Abdullah Al Maruf in vision-language evaluation, feature distillation, Bengali image-text grounding, and evidence-based inspection.">
-  <header class="page-header shell">
-    <p class="eyebrow">Research</p>
-    <div>
-      <h1>Questions, evidence, and limits.</h1>
-      <p>Completed studies are separated from ongoing experiments and manuscript revisions. Detail pages report methods, findings, controls, and limitations at the level supported by the available record.</p>
-    </div>
+  <header class="page-header title-only shell">
+    <h1>Research</h1>
   </header>
 
   <section class="shell page-section">
-    <SectionHeading index="01" title="Completed studies" intro="Accepted non-archival workshop contributions with public artifacts." />
+    <SectionHeading index="01" title="Completed studies" />
     <div class="item-list detailed">{completedResearch.map((project, index) => <ResearchItem project={project} index={index} />)}</div>
   </section>
 
   <section class="shell page-section">
-    <SectionHeading index="02" title="Ongoing research" intro="Experiments and manuscripts at their documented current stage." />
+    <SectionHeading index="02" title="Ongoing research" />
     <div class="item-list detailed">{ongoingResearch.map((project, index) => <ResearchItem project={project} index={index} />)}</div>
   </section>
 

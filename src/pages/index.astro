@@ -37,24 +37,24 @@ const description = 'Abdullah Al Maruf is a CSE undergraduate at RUET studying v
   </section>
 
   <section class="section shell">
-    <SectionHeading index="01" title="Selected completed research" intro="Completed studies with documented results and public artifacts." />
+    <SectionHeading index="01" title="Selected research" />
     <div class="item-list">{completedResearch.map((project, index) => <ResearchItem project={project} index={index} compact />)}</div>
   </section>
 
   <section class="section shell">
-    <SectionHeading index="02" title="Publications and manuscripts" intro="Contribution type and review status are stated explicitly." />
+    <SectionHeading index="02" title="Publications" />
     <div class="publication-list">{publications.map((publication, index) => <PublicationItem publication={publication} index={index} />)}</div>
     <a class="section-link" href="/publications/">Publication details</a>
   </section>
 
   <section class="section shell">
-    <SectionHeading index="03" title="Ongoing research" intro="Current experiments and manuscripts are separated from completed, peer-reviewed contributions." />
+    <SectionHeading index="03" title="Current research" />
     <div class="item-list">{[...ongoingResearch, ...revisionResearch].map((project, index) => <ResearchItem project={project} index={index} compact />)}</div>
     <a class="section-link" href="/research/">Research overview</a>
   </section>
 
   <section class="section shell preparation-section">
-    <SectionHeading index="04" title="Education and preparation" />
+    <SectionHeading index="04" title="Background" />
     <div class="preparation-grid">
       <div>
         <h3>{profile.degree}</h3>
