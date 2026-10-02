@@ -12,6 +12,9 @@ export type ResearchProject = {
   stage: ResearchStage;
   status: string;
   context: string;
+  venueName?: string;
+  venueContext?: string;
+  archivalStatus?: string;
   question: string;
   summary: string;
   finding?: string;
@@ -30,6 +33,9 @@ export const research: readonly ResearchProject[] = [
     stage: 'completed',
     status: 'Accepted workshop paper and poster',
     context: 'SDAD Workshop at ECCV 2026 · Non-archival',
+    venueName: 'SDAD Workshop',
+    venueContext: 'ECCV 2026',
+    archivalStatus: 'Non-archival',
     question: 'Do strong vision-language models make reliable fine-grained defensive-driving judgments in Bangladesh road scenes?',
     summary: 'A diagnostic evaluation of three open VLMs on 500 existing road-scene images from RSUD20K and TFP-BD.',
     finding: 'Hazard-presence accuracy of 88.0–89.2% approximately matched the 89.0% majority baseline, while category accuracy stayed below 40%, timing accuracy was 1.6–12.4%, and exact defensive-action matching stayed below 2%.',
@@ -48,6 +54,9 @@ export const research: readonly ResearchProject[] = [
     stage: 'completed',
     status: 'Accepted extended abstract and poster',
     context: 'LIGHT Workshop at NeurIPS 2026 · Non-archival',
+    venueName: 'LIGHT Workshop',
+    venueContext: 'NeurIPS 2026',
+    archivalStatus: 'Non-archival',
     question: 'Can frozen DINOv2 representations improve a recurrent local-update image classifier?',
     summary: 'A controlled three-seed CIFAR-100 study comparing feature distillation for NCA-Lite and a closely parameter-count-matched feed-forward CNN.',
     finding: 'Feature distillation improved NCA-Lite from 51.71 ± 0.19% to 54.77 ± 0.62%, but the feed-forward CNN also improved and remained more accurate and substantially cheaper in this comparison.',

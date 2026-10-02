@@ -66,9 +66,12 @@ h1, h2, h3 { text-wrap: balance; }
 .research-item.compact { padding-block: 27px; }
 .research-item.compact p:last-child { color: var(--muted); margin-bottom: 0; }
 .research-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; font: 700 .74rem/1.45 var(--mono); text-transform: uppercase; letter-spacing: .045em; }
-.research-meta span { padding: 4px 8px; }
-.research-meta span:first-child { border-left: 3px solid var(--accent); background: #e6efec; color: var(--ink); }
-.research-meta span:last-child { border: 1px solid var(--rule); color: var(--muted); }
+.research-status, .research-venue-name, .research-venue-context, .research-note, .research-context { padding: 4px 8px; }
+.research-status { border-left: 3px solid var(--accent); background: #e6efec; color: var(--ink); }
+.research-venue-name { background: #d7e8e4; color: var(--ink); }
+.research-venue-join { padding-inline: 1px; color: var(--muted); font: italic .9rem/1 var(--serif); text-transform: lowercase; letter-spacing: 0; }
+.research-venue-context { background: var(--accent-dark); color: white; }
+.research-note, .research-context { border: 1px solid var(--rule); color: var(--muted); }
 .research-question { margin-block: 17px 12px; padding: 10px 12px 10px 14px; border-left: 3px solid var(--accent); background: #f2f5f3; color: var(--ink); }
 .research-question span, .contribution span, .project-status span { display: block; margin-bottom: 4px; color: var(--accent-dark); font: 700 .7rem/1.5 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
 .contribution { margin-top: 18px; }

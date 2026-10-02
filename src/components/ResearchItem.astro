@@ -7,8 +7,15 @@ const { project, index, compact = false } = Astro.props;
   <p class="item-index">{String(index + 1).padStart(2, '0')}</p>
   <div>
     <div class="research-meta">
-      <span>{project.status}</span>
-      <span>{project.context}</span>
+      <span class="research-status">{project.status}</span>
+      {project.venueName && project.venueContext ? (
+        <>
+          <span class="research-venue-name">{project.venueName}</span>
+          <span class="research-venue-join">at</span>
+          <span class="research-venue-context">{project.venueContext}</span>
+          {project.archivalStatus && <span class="research-note">{project.archivalStatus}</span>}
+        </>
+      ) : <span class="research-context">{project.context}</span>}
     </div>
     <h3>{project.detailPath ? <a href={project.detailPath}>{project.shortTitle}</a> : project.shortTitle}</h3>
     {!compact && <p class="full-title">{project.title}</p>}
