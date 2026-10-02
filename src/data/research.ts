@@ -38,8 +38,8 @@ export const research: readonly ResearchProject[] = [
     archivalStatus: 'Non-archival',
     question: 'Do strong vision-language models make reliable fine-grained defensive-driving judgments in Bangladesh road scenes?',
     summary: 'A diagnostic evaluation of three open VLMs on 500 existing road-scene images from RSUD20K and TFP-BD.',
-    finding: 'Hazard-presence accuracy of 88.0–89.2% approximately matched the 89.0% majority baseline, while category accuracy stayed below 40%, timing accuracy was 1.6–12.4%, and exact defensive-action matching stayed below 2%.',
-    contribution: 'Led the study design.',
+    finding: 'Hazard-presence accuracy of 88.0–89.2% was similar to the 89% majority baseline, category macro-F1 ranged from 9.4 to 10.5%, and one model reached 61.2% severity accuracy while failing all 58 high-severity cases.',
+    contribution: 'First author; study design and leadership.',
     detailPath: '/research/bd-hazardvlm/',
     themes: ['Defensive-driving reasoning', 'Diagnostic evaluation', 'Bangladesh road scenes'],
     links: [
@@ -60,7 +60,7 @@ export const research: readonly ResearchProject[] = [
     question: 'Can frozen DINOv2 representations improve a recurrent local-update image classifier?',
     summary: 'A controlled three-seed CIFAR-100 study comparing feature distillation for NCA-Lite and a closely parameter-count-matched feed-forward CNN.',
     finding: 'Feature distillation improved NCA-Lite from 51.71 ± 0.19% to 54.77 ± 0.62%, but the feed-forward CNN also improved and remained more accurate and substantially cheaper in this comparison.',
-    contribution: 'Sole-author study.',
+    contribution: 'Sole-author study of recurrent local-update image classifiers.',
     detailPath: '/research/dinov2-feature-distillation/',
     themes: ['Knowledge distillation', 'Recurrent local updates', 'Controlled comparison'],
     links: [

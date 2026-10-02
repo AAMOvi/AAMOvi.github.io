@@ -4,7 +4,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 import PublicationItem from '../components/PublicationItem.astro';
 import { profile } from '../data/profile';
 import { research } from '../data/research';
-import { acceptedPublications } from '../data/publications';
+import { publications } from '../data/publications';
 ---
 <BaseLayout title="CV — Abdullah Al Maruf" description="Academic background, research experience, technical skills, and selected honors of Abdullah Al Maruf.">
   <header class="page-header shell cv-header">
@@ -25,8 +25,8 @@ import { acceptedPublications } from '../data/publications';
     </section>
 
     <section class="cv-section">
-      <SectionHeading index="02" title="Accepted publications" />
-      <div class="publication-list">{acceptedPublications.map((publication, index) => <PublicationItem publication={publication} index={index} />)}</div>
+      <SectionHeading index="02" title="Publications and manuscripts" />
+      <div class="publication-list">{publications.map((publication, index) => <PublicationItem publication={publication} index={index} />)}</div>
     </section>
 
     <section class="cv-section">

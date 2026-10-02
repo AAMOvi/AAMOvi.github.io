@@ -13,19 +13,6 @@ export type Publication = {
 
 export const publications: readonly Publication[] = [
   {
-    title: 'BD-HazardVLM: Probing Vision-Language Models for Latent Defensive-Driving Hazards in Bangladesh Road Scenes',
-    authors: ['Abdullah Al Maruf', 'Md. Sajedul Islam', 'Tanmoy Mridha', 'Irfan Hossain Bhuiyan'],
-    venueName: 'Safe and Defensive Autonomous Driving (SDAD) Workshop',
-    venueContext: 'ECCV 2026',
-    status: 'Accepted workshop paper and poster',
-    contributionType: 'Peer-reviewed · Non-archival workshop contribution',
-    year: 2026,
-    links: [
-      { label: 'Paper', url: 'https://sdad.cc/papers/pdf/16_BD_HazardVLM_Probing_Vision.pdf' },
-      { label: 'Official record', url: 'https://sdad.cc/papers.html' },
-    ],
-  },
-  {
     title: 'DINOv2 Feature Distillation for Recurrent Local-Update Image Classifiers',
     authors: ['Abdullah Al Maruf'],
     venueName: 'LIGHT Workshop',
@@ -36,6 +23,19 @@ export const publications: readonly Publication[] = [
     links: [
       { label: 'OpenReview', url: 'https://openreview.net/forum?id=TeTIxX7sLm' },
       { label: 'PDF', url: 'https://openreview.net/pdf?id=TeTIxX7sLm' },
+    ],
+  },
+  {
+    title: 'BD-HazardVLM: Probing Vision-Language Models for Latent Defensive-Driving Hazards in Bangladesh Road Scenes',
+    authors: ['Abdullah Al Maruf', 'Md. Sajedul Islam', 'Tanmoy Mridha', 'Irfan Hossain Bhuiyan'],
+    venueName: 'Safe and Defensive Autonomous Driving (SDAD) Workshop',
+    venueContext: 'ECCV 2026',
+    status: 'Accepted workshop paper and poster',
+    contributionType: 'Peer-reviewed · Non-archival workshop contribution',
+    year: 2026,
+    links: [
+      { label: 'Paper', url: 'https://sdad.cc/papers/pdf/16_BD_HazardVLM_Probing_Vision.pdf' },
+      { label: 'Official record', url: 'https://sdad.cc/papers.html' },
     ],
   },
   {
